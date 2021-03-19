@@ -9,4 +9,20 @@ export default class TaskService{
 
         return tasks.data;
     }
+
+    static async create(data){
+        await axios.post(`${baseUrl}/todos`,data)
+    }
+
+    static async details(id){
+        return axios.get(`${baseUrl}/todos/${id}`);
+    }
+
+    static async update(id,data){
+        return axios.put(`${baseUrl}/todos/${id}`,data);
+    }
+
+    static async delete(id){
+        return axios.delete(`${baseUrl}/todos/${id}`);
+    }
 }

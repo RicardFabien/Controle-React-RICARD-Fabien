@@ -10,8 +10,10 @@ export default class Task extends Component{
                     <div className="card-body">
                         <h5 className="card-title">{task.title}</h5>
                         <p className="card-text">{task.body}</p>
+                        <p className="card-text"> {
+                            task.completed?"Fini":"Non fini"
+                        }</p>
                         <Link to={`/tache/${task.id}`} className="btn btn-primary">Détails</Link>
-                        <Link to={`/tache/${task.id}/modifier`} className="btn btn-warning">Modifier</Link>
                     </div>
                 </div>
                 
